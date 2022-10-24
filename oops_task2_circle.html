@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Circle {
+            constructor(radius, color) {
+                this.radius = 1.0;
+                this.color = "Red";
+                if (radius !== undefined) {
+                    this.radius = radius;
+                }
+                if (color !== undefined) {
+                    this.color = color;
+                }
+            }
+
+            getRadius() {
+                return this.radius.toFixed(2);
+            }
+
+            setRadius(radius) {
+                this.radius = radius;
+            }
+
+            getColor() {
+                return this.color;
+            }
+
+            setColor(color) {
+                this.color = color;
+            }
+
+            toString() {
+                return (`Circle[radius=${this.radius},color=${this.color}]`);
+            }
+
+            getArea() {
+                return (2 * (Math.PI) * this.radius).toFixed(2);
+            }
+
+            getCircumference() {
+                return (2 * this.radius).toFixed(2);
+            }
+
+        }
+
+        var c1 = new Circle();
+        var c2 = new Circle(3.5);
+        var c3 = new Circle(2.2, "Green");
+
+
+        console.log("\n\nTest all functions - C1");
+        console.log("get Radius: ", c1.getRadius());
+        console.log("set Radius: ", c1.setRadius(7.0));
+        console.log("get Color: ", c1.getColor());
+        console.log("set Color: ", c1.setColor("Blue"));
+        console.log("To String: ", c1.toString());
+        console.log("Area: ", c1.getArea());
+        console.log("Circumference: ", c1.getCircumference());
+
+        console.log("\n\nTest all functions - C2");
+        console.log("get Radius: ", c2.getRadius());
+        console.log("set Radius: ", c2.setRadius(5.5));
+        console.log("get Color: ", c2.getColor());
+        console.log("set Color: ", c2.setColor("Yellow"));
+        console.log("To String: ", c2.toString());
+        console.log("Area: ", c2.getArea());
+        console.log("Circumference: ", c2.getCircumference());
+
+        console.log("\n\nTest all functions - C3");
+        console.log("get Radius: ", c1.getRadius());
+        console.log("set Radius: ", c1.setRadius(2.5));
+        console.log("get Color: ", c1.getColor());
+        console.log("set Color: ", c1.setColor("Black"));
+        console.log("To String: ", c1.toString());
+        console.log("Area: ", c1.getArea());
+        console.log("Circumference: ", c1.getCircumference());
+    </script>
+</body>
+
+</html>

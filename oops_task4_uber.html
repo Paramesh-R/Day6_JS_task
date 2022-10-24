@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Uber{
+            constructor(distance){
+                this.distance = distance;
+            }
+            getPrice(){
+                let pricePerKm = 4;
+                let totalBill = this.distance * pricePerKm;
+                return totalBill;
+            }
+
+            getPriceAfterDiscount(discountPercentage){
+                let pricePerKm = 4;
+                //Default 25 Percent Discount
+                if (discountPercentage==null){
+                    discountPercentage=25;
+                }
+                let totalBill = this.distance * pricePerKm * ((100-discountPercentage)/100);
+                return totalBill;
+            }
+
+        }
+        
+        
+        console.log("Person 1");
+        var person1 = new Uber(10);
+        console.log("Actual Price:" + person1.getPrice());
+        console.log("Discounted Price:" + person1.getPriceAfterDiscount());
+
+        console.log("\nPerson 2");
+        var person2 = new Uber(5);
+        console.log("Actual Price:" + person2.getPrice());
+        console.log("Default 25% Discounted Price:" + person2.getPriceAfterDiscount());
+        console.log("User defined 30% Discounted Price:" + person2.getPriceAfterDiscount(30));
+
+    </script>
+</body>
+</html>

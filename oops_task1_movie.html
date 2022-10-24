@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- The class Movie is stated below. An instance of class Movie represents a film. This class has the following three properties:
+
+        title, which is a String representing the title of the movie
+        studio, which is a String representing the studio that made the movie
+        rating, which is a String representing the rating of the movie (i.e. PG­13, R, etc)
+        a) Write a constructor for the class Movie, which takes a String representing the title of the movie, a String representing the studio, and a String representing the rating as its arguments, and sets the respective class properties to these values.
+
+        b) The constructor for the class Movie will set the class property rating to "PG" as default when no rating is provided.
+
+        c) Write a method getPG, which takes an array of base type Movie as its argument, and returns a new array of only those movies in the input array with a rating of "PG". You may assume the input array is full of Movie instances. The returned array need not be full.
+
+        d) Write a piece of code that creates an instance of the class Movie with the title “Casino Royale”, the studio “Eon Productions”, and the rating “PG­13” 
+    
+    -->
+    <script>
+        class Movie {
+            //Question A
+            // a) Write a constructor for the class Movie, which takes a String representing the title of the movie, a String representing the studio, and a String representing the rating as its arguments, and sets the respective class properties to these values.
+
+            constructor(title, studio, rating) {
+                this.title = title;
+                this.studio = studio;
+
+                // Question B
+                // b) The constructor for the class Movie will set the class property rating to "PG" as default when no rating is provided.
+
+                if (rating == null) {
+                    return this.rating = "PG";
+                } else {
+                    return this.rating = rating;
+                }
+            }
+
+
+            //Question C
+            // c) Write a method getPG, which takes an array of base type Movie as its argument, and returns a new array of only those movies in the input array with a rating of "PG". You may assume the input array is full of Movie instances. The returned array need not be full.
+
+            getPG(array) {
+
+                var test = array.filter((element) => element.rating == "PG");
+                return (test);
+            }
+        }
+
+        // Question D
+        //    d) Write a piece of code that creates an instance of the class Movie with the title “Casino Royale”, the studio “Eon Productions”, and the rating “PG­13” 
+
+        var film0 = new Movie("Casino Royale", "Eon Productions", "PG13");
+
+
+        //Testing Question C
+        var film1 = new Movie("Fast Five", "Universal Pictures", "PG13");
+        var film2 = new Movie("Furious 6", "Universal Pictures", "PG13");
+        var film3 = new Movie("2Fast 2Furious", "Universal Pictures", "PG13");
+        console.log("Movie list with no PG")
+        console.log(film1.getPG([film1, film2, film3])); // Returns Empty Array
+
+        var film4 = new Movie("Despicable Me", "Universal Pictures", "PG");
+        var film5 = new Movie("Despicable Me 2", "Universal Pictures", "PG");
+        var film6 = new Movie("Despicable Me 3", "Universal Pictures",);
+        allMovieList = [film1, film2, film3, film4, film5, film6];
+        console.log("__Output of getPG__");
+        console.log(film1.getPG(allMovieList));
+
+
+    </script>
+</body>
+
+</html>
